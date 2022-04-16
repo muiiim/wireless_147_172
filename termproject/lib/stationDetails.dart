@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/constants.dart';
+import 'package:project22/map.dart';
 import 'package:project22/stationModel.dart';
 
 class stationDetails extends StatefulWidget {
@@ -59,6 +60,20 @@ class _StationDetailState extends State<stationDetails> {
                 'assets/images/' + widget.stations.imgName + 'Station.jpg',
                 width: 300,
               ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: secondColor,
+              ),
+              child: Text("Direction",
+                  style: TextStyle(color: firstColor, fontSize: 15)),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MapPage(),
+                  ),
+                );
+              },
             ),
           ],
         ),

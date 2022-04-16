@@ -15,7 +15,11 @@ class Landing extends StatelessWidget {
               width: 250,
               height: 250,
             ),
-            Text('_______________________',
+            Text(
+              'GAS U NEE',
+              style: TextStyle(color: secondColor, fontSize: 30),
+            ),
+            Text('\n_______________________',
                 style: TextStyle(color: thirdColor)),
             Text(
               '\nThe nearest gas station\n',
