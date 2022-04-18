@@ -11,12 +11,12 @@ class Landing extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Image.asset(
-              "assets/images/gasLogo.png",
+              "assets/images/gasLogo.png", //set logo
               width: 250,
               height: 250,
             ),
             Text(
-              'GAS U NEE',
+              'GAS U NEE', //application name
               style: TextStyle(color: secondColor, fontSize: 30),
             ),
             Text('\n_______________________',
@@ -29,7 +29,7 @@ class Landing extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 primary: secondColor,
               ),
-              child: Text("Get started",
+              child: Text("Get started", //button route to next page
                   style: TextStyle(color: firstColor, fontSize: 15)),
               onPressed: () {
                 Navigator.of(context).push(

@@ -12,7 +12,7 @@ class MainStation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('The gas station', style: TextStyle(color: firstColor)),
+        title: Text('The gas station', style: TextStyle(color: firstColor)), 
         backgroundColor: secondColor,
         iconTheme: IconThemeData(color: firstColor),
       ),
@@ -28,14 +28,14 @@ class MainStation extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) =>
-                              stationDetails(stations: stationList[index]),
+                              stationDetails(stations: stationList[index]), //direct to each station page
                         ),
                       );
                     },
                     child: Container(
                       margin: const EdgeInsets.all(20),
                       height: 200,
-                      child: Stack(
+                      child: Stack( //list all station
                         children: [
                           Positioned.fill(
                             child: ClipRRect(
@@ -47,7 +47,7 @@ class MainStation extends StatelessWidget {
                                   fit: BoxFit.cover),
                             ),
                           ),
-                          Positioned(
+                          Positioned( //title of each station
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: const BorderRadius.only(

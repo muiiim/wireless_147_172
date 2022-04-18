@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project22/constants.dart';
 import 'package:project22/landing.dart';
-import 'package:project22/map.dart';
 import 'package:project22/stationModel.dart';
 
 class stationDetails extends StatefulWidget {
@@ -71,7 +70,7 @@ class _StationDetailState extends State<stationDetails> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => MapPage(),
+                    builder: (context) => Landing(),
                   ),
                 );
               },
