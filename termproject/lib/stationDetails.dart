@@ -3,21 +3,21 @@ import 'package:project22/constants.dart';
 import 'package:project22/map.dart';
 import 'package:project22/stationModel.dart';
 
-class stationDetails extends StatefulWidget {
-  final stationModel stations;
+class StationDetails extends StatefulWidget {
+  StationModel stations;
 
-  const stationDetails({
+  StationDetails({
     Key? key,
     required this.stations,
   }) : super(key: key);
 
   @override
-  _StationDetailState createState() {
-    return _StationDetailState();
+  _StationDetailstate createState() {
+    return _StationDetailstate();
   }
 }
 
-class _StationDetailState extends State<stationDetails> {
+class _StationDetailstate extends State<StationDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +70,9 @@ class _StationDetailState extends State<stationDetails> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => MapScreen(),
+                    builder: (context) => MapScreen(
+                        latLocation: widget.stations.lat,
+                        longLocation: widget.stations.long),
                   ),
                 );
               },

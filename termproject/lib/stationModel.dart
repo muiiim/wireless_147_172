@@ -1,36 +1,44 @@
-class stationModel {
+import 'dart:ffi';
+
+class StationModel {
   String name;
   String imgName;
-  String desc;
+  double lat;
+  double long;
 
-  stationModel(this.name, this.imgName, this.desc);
+  StationModel(this.name, this.imgName, this.lat, this.long);
 
-  static List<stationModel> getStationData() {
+  static List<StationModel> getStationData() {
     return [
-      stationModel(
+      StationModel(
         'PTT',
         'PTT',
-        '..',
+        13.749125,
+        100.388364,
       ),
-      stationModel(
+      StationModel(
         'Bangchak',
         'Bangchak',
-        '..',
+        45.521563,
+        -122.677433,
       ),
-      stationModel(
+      StationModel(
         'Esso',
         'Esso',
-        '..',
+        13.749125,
+        100.388364,
       ),
-      stationModel(
+      StationModel(
         'Caltex',
         'Caltex',
-        '..',
+        13.749125,
+        100.388364,
       ),
-      stationModel(
+      StationModel(
         'Shell',
         'Shell',
-        '..',
+        13.749125,
+        100.388364,
       ),
     ];
   }

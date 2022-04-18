@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:project22/constants.dart';
 import 'package:geolocator/geolocator.dart';
 
-class currentLocation extends StatefulWidget {
+class CurrentLocation extends StatefulWidget {
   @override
-  _currentLocationState createState() => _currentLocationState();
+  _CurrentLocationState createState() => _CurrentLocationState();
 }
 
-class _currentLocationState extends State<currentLocation> {
+class _CurrentLocationState extends State<CurrentLocation> {
   @override
   var long = "longitude";
   var lat = "latitude";
-  void getlocation() async {
+  void getLocation() async {
     LocationPermission per = await Geolocator.checkPermission();
     LocationPermission per1 =
         await Geolocator.requestPermission(); // request permission for location
@@ -38,20 +38,21 @@ class _currentLocationState extends State<currentLocation> {
       appBar: AppBar(
         title: Text('My location', style: TextStyle(color: firstColor)),
         backgroundColor: secondColor,
+        iconTheme: IconThemeData(color: firstColor),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "logitude : " + long,
+              "latitude : " + lat,
               style: TextStyle(
                 color: secondColor,
                 fontSize: 20,
               ),
             ),
             Text(
-              "latitude : " + lat,
+              "logitude : " + long,
               style: TextStyle(
                 color: secondColor,
                 fontSize: 20,
@@ -63,7 +64,7 @@ class _currentLocationState extends State<currentLocation> {
               ),
               child: Text("Get Location", //button to get lat/long
                   style: TextStyle(color: firstColor, fontSize: 20)),
-              onPressed: getlocation,
+              onPressed: getLocation,
             ),
           ],
         ),

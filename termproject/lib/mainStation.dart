@@ -5,9 +5,7 @@ import 'package:project22/stationModel.dart';
 import 'package:project22/currentLocation.dart';
 
 class MainStation extends StatelessWidget {
-  List<stationModel> stationList = stationModel.getStationData();
-
-  MainStation({Key? key}) : super(key: key);
+  List<StationModel> stationList = StationModel.getStationData();
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +13,7 @@ class MainStation extends StatelessWidget {
       appBar: AppBar(
         title: Text('The gas station', style: TextStyle(color: firstColor)),
         backgroundColor: secondColor,
+        iconTheme: IconThemeData(color: firstColor),
       ),
       body: SafeArea(
         child: Column(
@@ -27,7 +26,7 @@ class MainStation extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => stationDetails(
+                          builder: (context) => StationDetails(
                               stations: stationList[
                                   index]), //direct to each station page
                         ),
@@ -107,7 +106,7 @@ class MainStation extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => currentLocation(),
+              builder: (context) => CurrentLocation(),
             ),
           );
         },
