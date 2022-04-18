@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project22/constants.dart';
 import 'package:project22/stationDetails.dart';
 import 'package:project22/stationModel.dart';
+import 'package:project22/currentLocation.dart';
 
 class MainStation extends StatelessWidget {
   List<stationModel> stationList = stationModel.getStationData();
@@ -12,9 +13,8 @@ class MainStation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('The gas station', style: TextStyle(color: firstColor)), 
+        title: Text('The gas station', style: TextStyle(color: firstColor)),
         backgroundColor: secondColor,
-        iconTheme: IconThemeData(color: firstColor),
       ),
       body: SafeArea(
         child: Column(
@@ -27,15 +27,17 @@ class MainStation extends StatelessWidget {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) =>
-                              stationDetails(stations: stationList[index]), //direct to each station page
+                          builder: (context) => stationDetails(
+                              stations: stationList[
+                                  index]), //direct to each station page
                         ),
                       );
                     },
                     child: Container(
                       margin: const EdgeInsets.all(20),
                       height: 200,
-                      child: Stack( //list all station
+                      child: Stack(
+                        //list all station
                         children: [
                           Positioned.fill(
                             child: ClipRRect(
@@ -47,7 +49,8 @@ class MainStation extends StatelessWidget {
                                   fit: BoxFit.cover),
                             ),
                           ),
-                          Positioned( //title of each station
+                          Positioned(
+                            //title of each station
                             child: Container(
                               decoration: BoxDecoration(
                                 borderRadius: const BorderRadius.only(
@@ -96,6 +99,21 @@ class MainStation extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        // route to get my location page
+        backgroundColor: secondColor,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => currentLocation(),
+            ),
+          );
+        },
+        child: Icon(
+          Icons.near_me,
+          color: firstColor,
         ),
       ),
     );

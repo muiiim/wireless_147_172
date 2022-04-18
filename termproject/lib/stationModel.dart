@@ -3,11 +3,7 @@ class stationModel {
   String imgName;
   String desc;
 
-  stationModel(
-    this.name,
-    this.imgName, 
-    this.desc
-    );
+  stationModel(this.name, this.imgName, this.desc);
 
   static List<stationModel> getStationData() {
     return [
