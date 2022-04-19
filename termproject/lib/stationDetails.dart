@@ -72,7 +72,7 @@ class _StationDetailstate extends State<StationDetails> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) =>
-                        MapScreen(stationLocation: [widget.stations.lat,widget.stations.long],),
+                        MapScreen(stationLocation: [widget.stations.lat,widget.stations.long,widget.stations.name],),
                   ),
                 );
               },

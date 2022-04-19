@@ -22,19 +22,16 @@ class _MapScreenState extends State<MapScreen> {
   // static double longi = -122.677433;
   // final LatLng center = LatLng(lati, longi);
 
-  static final Marker _destination = Marker(
-      markerId: MarkerId('destination'), infoWindow: InfoWindow(title: ''));
-
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
     setState(
       () {
         _marker.add(
           Marker(
-            markerId: MarkerId('id'),
-            position:
-                LatLng(widget.stationLocation[0], widget.stationLocation[1]),
-          ),
+              markerId: MarkerId('id'),
+              position:
+                  LatLng(widget.stationLocation[0], widget.stationLocation[1]),
+              infoWindow: InfoWindow(title: widget.stationLocation[2])),
         );
       },
     );
@@ -42,11 +39,10 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.stationLocation[0]);
-    print(widget.stationLocation[1]);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gas U Nee - Map', style: TextStyle(color: firstColor)),
+        title: Text(widget.stationLocation[2] + ' Map',
+            style: TextStyle(color: firstColor)),
         backgroundColor: secondColor,
         iconTheme: IconThemeData(color: firstColor),
       ),
@@ -55,7 +51,7 @@ class _MapScreenState extends State<MapScreen> {
         markers: _marker,
         initialCameraPosition: CameraPosition(
           target: LatLng(widget.stationLocation[0], widget.stationLocation[1]),
-          zoom: 13.0,
+          zoom: 15.0,
         ),
         mapType: MapType.normal,
       ),
