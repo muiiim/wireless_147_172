@@ -20,6 +20,7 @@ class StationDetails extends StatefulWidget {
 class _StationDetailstate extends State<StationDetails> {
   @override
   Widget build(BuildContext context) {
+    print(widget.stations.lat);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.stations.name + ' Station',
@@ -70,9 +71,8 @@ class _StationDetailstate extends State<StationDetails> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => MapScreen(
-                        latLocation: widget.stations.lat,
-                        longLocation: widget.stations.long),
+                    builder: (context) =>
+                        MapScreen(stationLocation: [widget.stations.lat,widget.stations.long],),
                   ),
                 );
               },
