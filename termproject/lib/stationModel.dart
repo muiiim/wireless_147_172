@@ -6,45 +6,51 @@ class StationModel {
   double lat;
   double long;
   String des;
+  double km;
 
-  StationModel(this.name, this.imgName, this.lat, this.long, this.des);
+  StationModel(this.name, this.imgName, this.lat, this.long, this.des, this.km);
 
   static List<StationModel> getStationData() {
     return [
       StationModel(
-        'PTT',
-        'PTT',
-        13.7430672,
-        100.3886944,
+        'Shell',
+        'Shell',
+        13.7330075,
+        100.4031456,
         'Coffee shop, Toilet',
-      ),
-      StationModel(
-        'Bangchak',
-        'Bangchak',
-        13.7324215,
-        100.3860827,
-        'Coffee shop, Toilet',
+        4.3,
       ),
       StationModel(
         'Esso',
         'Esso',
-        13.7653262,
-        100.3821206,
+        13.7547298,
+        100.4121623,
         'Coffee shop, Toilet',
+        4.3,
+      ),
+      StationModel(
+        'Bangchak',
+        'Bangchak',
+        13.7201448,
+        100.4053104,
+        'Coffee shop, Toilet',
+        7.2,
       ),
       StationModel(
         'Caltex',
         'Caltex',
-        13.7639168,
-        100.3805248,
+        13.7831927,
+        100.402491,
         'Coffee shop, Toilet',
+        7.2,
       ),
       StationModel(
-        'Shell',
-        'Shell',
-        13.7633302,
-        100.3811636,
+        'PTT',
+        'PTT',
+        13.7675535,
+        100.4079424,
         'Coffee shop, Toilet',
+        8.5,
       ),
     ];
   }

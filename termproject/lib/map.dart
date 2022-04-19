@@ -34,7 +34,8 @@ class _MapScreenState extends State<MapScreen> {
               markerId: MarkerId('destination'),
               position:
                   LatLng(widget.stationLocation[0], widget.stationLocation[1]),
-              infoWindow: InfoWindow(title: widget.stationLocation[2]),
+              infoWindow:
+                  InfoWindow(title: widget.stationLocation[2] + ' station'),
               icon: BitmapDescriptor.defaultMarkerWithHue(
                   BitmapDescriptor.hueBlue)),
         );
@@ -56,7 +57,7 @@ class _MapScreenState extends State<MapScreen> {
         markers: _markers,
         initialCameraPosition: CameraPosition(
           target: LatLng(widget.stationLocation[0], widget.stationLocation[1]),
-          zoom: 15.0,
+          zoom: 13,
         ),
         mapType: MapType.normal,
       ),

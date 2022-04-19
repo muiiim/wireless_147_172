@@ -20,7 +20,7 @@ class StationDetails extends StatefulWidget {
 class _StationDetailstate extends State<StationDetails> {
   @override
   Widget build(BuildContext context) {
-    print(widget.stations.lat);
+    // print(widget.stations.lat);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.stations.name + ' Station',
@@ -62,14 +62,17 @@ class _StationDetailstate extends State<StationDetails> {
                 width: 300,
               ),
             ),
-            Text(
-              'Service at ' +
-                  widget.stations.name +
-                  ' : ' +
-                  widget.stations.des,
-              style: TextStyle(
-                color: secondColor,
-                fontSize: 20,
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Text(
+                'Service at ' +
+                    widget.stations.name +
+                    ' : \n' +
+                    widget.stations.des,
+                style: TextStyle(
+                  color: secondColor,
+                  fontSize: 20,
+                ),
               ),
             ),
             ElevatedButton(

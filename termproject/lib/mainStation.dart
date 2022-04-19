@@ -73,7 +73,10 @@ class MainStation extends StatelessWidget {
                             child: Row(
                               children: [
                                 Text(
-                                  stationList[index].name + '  ',
+                                  stationList[index].name +
+                                      ' - ' +
+                                      stationList[index].km.toString() +
+                                      'KM ',
                                   style: TextStyle(
                                       color: secondColor, fontSize: 20),
                                 ),
