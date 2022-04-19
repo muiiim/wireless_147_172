@@ -17,21 +17,26 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> {
   @override
   late GoogleMapController mapController;
-  Set<Marker> _marker = {};
-  // static double lati = widget.stationLocation;
-  // static double longi = -122.677433;
-  // final LatLng center = LatLng(lati, longi);
-
+  Set<Marker> _markers = {};
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
     setState(
       () {
-        _marker.add(
+        _markers.add(
           Marker(
-              markerId: MarkerId('id'),
+              markerId: MarkerId('start'),
+              position: LatLng(13.7290373, 100.3883634),
+              infoWindow: InfoWindow(title: 'My location'),
+              icon: BitmapDescriptor.defaultMarker),
+        );
+        _markers.add(
+          Marker(
+              markerId: MarkerId('destination'),
               position:
                   LatLng(widget.stationLocation[0], widget.stationLocation[1]),
-              infoWindow: InfoWindow(title: widget.stationLocation[2])),
+              infoWindow: InfoWindow(title: widget.stationLocation[2]),
+              icon: BitmapDescriptor.defaultMarkerWithHue(
+                  BitmapDescriptor.hueBlue)),
         );
       },
     );
@@ -48,7 +53,7 @@ class _MapScreenState extends State<MapScreen> {
       ),
       body: GoogleMap(
         onMapCreated: _onMapCreated,
-        markers: _marker,
+        markers: _markers,
         initialCameraPosition: CameraPosition(
           target: LatLng(widget.stationLocation[0], widget.stationLocation[1]),
           zoom: 15.0,
