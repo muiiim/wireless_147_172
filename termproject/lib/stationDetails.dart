@@ -62,6 +62,16 @@ class _StationDetailstate extends State<StationDetails> {
                 width: 300,
               ),
             ),
+            Text(
+              'Service at ' +
+                  widget.stations.name +
+                  ' : ' +
+                  widget.stations.des,
+              style: TextStyle(
+                color: secondColor,
+                fontSize: 20,
+              ),
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: secondColor,
@@ -71,8 +81,13 @@ class _StationDetailstate extends State<StationDetails> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) =>
-                        MapScreen(stationLocation: [widget.stations.lat,widget.stations.long,widget.stations.name],),
+                    builder: (context) => MapScreen(
+                      stationLocation: [
+                        widget.stations.lat,
+                        widget.stations.long,
+                        widget.stations.name
+                      ],
+                    ),
                   ),
                 );
               },
