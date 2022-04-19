@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class StationModel {
   String name;
   String imgName;
